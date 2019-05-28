@@ -1,0 +1,19 @@
+site_name: Cisco Live 2019 LTRDCN-1572
+repo_url: https://github.com/fchaudhr/LTRDCN1572.git
+remote_branch: gh-pages
+remote_name: origin
+pages:
+    - Home: index.md
+    - Introduction: intro.md
+    - Task 1 - Prepare Ansible node: Task1-ansible-node.md
+    - Task 2 - First Simple Ansible Playbook: task2-first-ansible.md
+    - Task 3 - Use of Jinja2 templates with Ansible Playbook: task3-vxlan-jinja2.md
+    - Task 4 - Config switches using Ansible NXOS modules: task4-vxlan-nxos.md
+    - Task 5 - Day 2 Operations: task5-day2-operation.md
+    - Appendix A - F5: appendixA-F5.md
+    - Appendix B - Upgrade: appendixB-Upgrade.md
+theme: readthedocs
+#plugins:
+#    - search
+#    - pdf-export
+
