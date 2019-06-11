@@ -152,10 +152,10 @@
               
                 <h2 id="vxlan">VXLAN</h2>
 <p>VXLAN stands for Virtual Extensible Local Area Network. VXLAN is a L2 overlay scheme on top of L3 network or we can say it is a L2 in layer 3 tunnel. It runs over the existing networks and provides the means to stretch the L2 network. Only VMs within the same VXLAN segment can communicate with each other. Each VXLAN segment is identified by a 24 bit segment ID called “VXLAN Network Identifier (VNI)”.  This help overcome 4094 VLAN scale limitation and able to extend it to 224 segments.</p>
-<p>VXLAN uses BGP as its control plane for Overlay. It makes it forwarding decisions at VTEPs (Virtual tunnel end points) for layer-2 and layer-3. Forwarding happens based on MAC or IP learnt via control plane (MP-BGP EVPN) . VXLAN uses IGP, PIM and BGP as its underlay in the fabric. </p>
+<p>VXLAN uses BGP as its control plane for Overlay. It makes it forwarding decisions at VTEPs (Virtual tunnel end points) for layer-2 and layer-3. Forwarding happens based on MAC or IP learnt via control plane (MP-BGP EVPN) . VXLAN uses IGP, PIM and BGP as its underlay in the fabric.</p>
 <p>Below are some of the terminologies that will be used in the lab:</p>
 <ul>
-<li><strong>VNI / VNID</strong> – VXLAN Network Identifier. This replaces VLAN ID </li>
+<li><strong>VNI / VNID</strong> – VXLAN Network Identifier. This replaces VLAN ID</li>
 <li><strong>VTEP</strong> – VXLAN Tunnel End Point.<ul>
 <li>This is the end point where the box performs VXLAN encap / decap
 This could be physical HW (Nexus9k) or Virtual (Nexus 1000v, Nexus 9000v)</li>
@@ -169,37 +169,37 @@ This could be physical HW (Nexus9k) or Virtual (Nexus 1000v, Nexus 9000v)</li>
 </li>
 </ul>
 <h2 id="ansible">Ansible</h2>
-<p>Ansible is an agentless open source software that can be used for configuration management, deployment and orchestration of deployment. The scripts in Ansible are called playbooks; playbook is in YAML format that was desgiened to be easy for humans to read and write. Playbooks include one or more plays, each play include one or more tasks. Each task is associated with one module, which is what gets executed in the playbook. Modules are python scripts that ship with Ansible installation. During the lab, you will be introduced to multiple NXOS modules and ansible template module. </p>
+<p>Ansible is an agentless open source software that can be used for configuration management, deployment and orchestration of deployment. The scripts in Ansible are called playbooks; playbook is in YAML format that was designed to be easy for humans to read and write. Playbooks include one or more plays, each play include one or more tasks. Each task is associated with one module, which is what gets executed in the playbook. Modules are python scripts that ship with Ansible installation. During the lab, you will be introduced to multiple NXOS modules and ansible template module.</p>
 <p>You can find all Ansible modules documentation at below url:
 <a href="http://docs.ansible.com/ansible/latest/list_of_all_modules.html">http://docs.ansible.com/ansible/latest/list_of_all_modules.html</a></p>
 <p>Below are some of the terminologies that will be used in the lab:</p>
 <ul>
 <li><strong>Host</strong>: remote machines that Ansible manages  </li>
-<li><strong>Group</strong>: several hosts that can be configured together and share common verables </li>
+<li><strong>Group</strong>: several hosts that can be configured together and share common variables</li>
 <li><strong>Inventory</strong>: file descripts hosts and groups in Ansible.</li>
 <li><strong>Variable</strong>: names of value (int, str, dic, list) referenced in playbook or template</li>
-<li><strong>YAML</strong>: data format for Playbook or Variables in Ansible </li>
-<li><strong>Playbook</strong>: the script to orchestrate, automate, deploy system in Ansible. One playbook can include multiple plays. </li>
+<li><strong>YAML</strong>: data format for Playbook or Variables in Ansible</li>
+<li><strong>Playbook</strong>: the script to orchestrate, automate, deploy system in Ansible. One playbook can include multiple plays.</li>
 <li><strong>Roles</strong>: group of tasks, templates to implement specific behavior</li>
 <li><strong>Jinja2</strong>: a Python based tempting language</li>
 </ul>
 <p><img alt="" src="../pic/Picture1.png" /></p>
 <h2 id="about-this-lab">About this lab</h2>
 <p>As a standardized overlay technology, multiple vendors have adopted VXLAN as datacenter solution to provide scalability and allow layer 2 across IP network. MP-BPG EVPN as VXLAN control plane protocol provides a robust scalable solution to overcome the limitation in VXLAN flood and learn mode.</p>
-<p>As an open source automation tool, Ansible provides the same framework for network administrators to automate network infrastructure as the rest IT organization. </p>
-<p>This lab demostates the possibility of using Ansible to automate datacenter VXLAN fabric day 1 provisiong and day 2 operations. </p>
+<p>As an open source automation tool, Ansible provides the same framework for network administrators to automate network infrastructure as the rest IT organization.</p>
+<p>This lab demonstrates the possibility of using Ansible to automate datacenter VXLAN fabric day 1 provision and day 2 operations.</p>
 <h3 id="lab-flow">Lab Flow</h3>
 <p>Lab guide will walk the attendees through the below activities:</p>
 <ol>
-<li>Ansible installation </li>
-<li>Ansible playbook </li>
-<li>Day 1 automation using Ansible </li>
-<li>Day 2 automation using Ansible </li>
-<li>Day 0 automation </li>
-<li>L4-L7 Service insertion</li>
+<li>Ansible installation</li>
+<li>Ansible playbook</li>
+<li>Day 1 automation using Ansible</li>
+<li>Day 2 automation using Ansible</li>
+<li>Day 0 automation</li>
+<li>Code upgrade using Ansible</li>
 </ol>
 <h3 id="lab-access">Lab Access</h3>
-<p>Below table provides the IP addresses and credentials for the devices used in this lab: </p>
+<p>Below table provides the IP addresses and credentials for the devices used in this lab:</p>
 <table>
 <thead>
 <tr>
@@ -248,11 +248,6 @@ This could be physical HW (Nexus9k) or Virtual (Nexus 1000v, Nexus 9000v)</li>
 <td align="center">Ansible Server</td>
 <td align="center">198.18.134.150</td>
 <td align="center">root/C1sco12345</td>
-</tr>
-<tr>
-<td align="center">DCNM</td>
-<td align="center">198.18.134.200</td>
-<td align="center">admin/C1sco12345</td>
 </tr>
 <tr>
 <td align="center">Remote Workstation</td>

@@ -150,12 +150,12 @@
             <div class="section">
               
                 <h1 id="task-5-day-2-operation-using-ansible">Task 5: Day 2 operation using Ansible</h1>
-<p>In this section, we will use automation to perform following day 2 operation tasks. </p>
+<p>In this section, we will use automation to perform following day 2 operation tasks.</p>
 <ul>
-<li>Backup running configurations on all leaf and spine switches </li>
-<li>Verify underlay ospf, bgp and pim neighbors </li>
-<li>Verify overlay nve peer, host route, bgp update </li>
-<li>Baseline configuration comparison </li>
+<li>Backup running configurations on all leaf and spine switches</li>
+<li>Verify underlay ospf, bgp and pim neighbors</li>
+<li>Verify overlay nve peer, host route, bgp update</li>
+<li>Baseline configuration comparison</li>
 <li>Add new VNIs into the existing fabric</li>
 </ul>
 <hr />
@@ -166,7 +166,7 @@
 <p>On <strong>Atom</strong>, open up the project folder <strong>“LTRDCN-1572”</strong> and create new file under <code>LTRDCN-1572</code>. Name the new file <code>get_config.yml</code>.</p>
 </li>
 <li>
-<p><strong>Click</strong> <code>File</code> and <code>Save</code> . This will save the playbook, and also ftp the playbook to Ansible server using pre-configured “<strong>remote-sync</strong>” package. </p>
+<p><strong>Click</strong> <code>File</code> and <code>Save</code> . This will save the playbook, and also ftp the playbook to Ansible server using pre-configured “<strong>remote-sync</strong>” package.</p>
 </li>
 </ul>
 <pre><code class="YAML">---
@@ -201,7 +201,7 @@
 <hr />
 <h3 id="step-2-verify-underlay-and-overlay">Step 2: Verify underlay and overlay</h3>
 <p>In this step, you will verify underlay and overlay operation using ansible playbook. The playbook will be applied to all leaf switches to verify the below commands:</p>
-<p><strong><em>Underlay</em></strong> </p>
+<p><strong><em>Underlay</em></strong></p>
 <pre><code>-   show ip ospf neighbor
 -   show ip bgp sum
 -   show ip pim neighbor
@@ -256,10 +256,10 @@
 
 <ul>
 <li>
-<p><strong>Click</strong> <code>File</code> and <code>Save</code> . This will save the playbook, and also ftp the playbook to Ansible server using pre-configured “<strong>remote-sync</strong>” package. </p>
+<p><strong>Click</strong> <code>File</code> and <code>Save</code> . This will save the playbook, and also ftp the playbook to Ansible server using pre-configured “<strong>remote-sync</strong>” package.</p>
 </li>
 <li>
-<p>On the Ansible node (via MTPutty), run <strong>verify_fabric.yml</strong> playbook and verify the output for <strong>underlay</strong> by executing below command (using respective tag): </p>
+<p>On the Ansible node (via MTPutty), run <strong>verify_fabric.yml</strong> playbook and verify the output for <strong>underlay</strong> by executing below command (using respective tag):</p>
 <pre><code>[root@rhel7-tools LTRDCN-1572]# ansible-playbook verify_fabric.yml --tags "underlay"
 </code></pre>
 </li>
@@ -524,7 +524,7 @@ ok: [198.18.4.101] =&gt; {
 
 <hr />
 <h3 id="step-3-baseline-configuration-comparison">Step 3: Baseline configuration comparison</h3>
-<p>In this section we will compare the running configuration with baseline configuration for configuration compliance check. The configuration file that we backed in tak 1 will be used as baseline configuration. </p>
+<p>In this section we will compare the running configuration with baseline configuration for configuration compliance check. The configuration file that we backed in task 1 will be used as baseline configuration.</p>
 <p>In this playbook, you will use <strong>“lookup”</strong> module to find the backup filename generated in Step 1. Then you will use <strong>diff_against</strong> function in <strong>nxos_config</strong> module to compare running configuration. </p>
 <ul>
 <li>On Atom, Open up the project folder <code>LTRDCN-1572</code> and create new file under <strong>“LTRDCN-1572”</strong>. Name the new file <code>verify_config.yml</code> and enter below data in this playbook:</li>
@@ -553,7 +553,7 @@ ok: [198.18.4.101] =&gt; {
 
 <ul>
 <li>
-<p><strong>Click</strong> <code>File</code> and <code>Save</code> . This will save the playbook, and also ftp the playbook to Ansible server using pre-configured “<strong>remote-sync</strong>” package. </p>
+<p><strong>Click</strong> <code>File</code> and <code>Save</code> . This will save the playbook, and also ftp the playbook to Ansible server using pre-configured “<strong>remote-sync</strong>” package.</p>
 </li>
 <li>
 <p><strong>Before</strong> you run this playbook, SSH into leaf-4 to make some configuration change as shown below.</p>
@@ -593,7 +593,7 @@ Leaf-4(config)# end
 </ul>
 <hr />
 <h3 id="step-4-add-new-vni">Step 4: Add new VNI</h3>
-<p>In this section, we will introduce following new VNI into the VXLAN fabric. </p>
+<p>In this section, we will introduce following new VNI into the VXLAN fabric.</p>
 <table>
 <thead>
 <tr>
@@ -626,7 +626,7 @@ Leaf-4(config)# end
 </table>
 <ul>
 <li>
-<p>First we will creat a new role, and name it <strong>“vni_provision”</strong> under folder roles using <strong>ansible-galaxy</strong> using below commands on the Ansible node (using MTputty via SSH connection): </p>
+<p>First we will creat a new role, and name it <strong>“vni_provision”</strong> under folder roles using <strong>ansible-galaxy</strong> using below commands on the Ansible node (using MTputty via SSH connection):</p>
 <pre><code>[root@rhel7-tools LTRDCN-1572]# cd roles/
 [root@rhel7-tools roles]# ansible-galaxy init vni_provision
 </code></pre>
@@ -664,7 +664,7 @@ Leaf-4(config)# end
 <li>Edit playbook file <code>mail.yml</code> for <strong>“vni_provision”</strong> role under <strong>“/root/LTRDCN-1572/roles/vni_provision/tasks”</strong> and enter below data.   Make sure to click <code>File</code> and <code>Save</code> on Atom to push this to Ansible server:</li>
 </ul>
 <hr />
-<p><font style=background-color:yellow>Note: It is recommended to write your playbook and learn from mistakes, but file is also available in the box folder if you prefer to reuse.</font> </p>
+<p><font style=background-color:yellow>Note: It is recommended to write your playbook and learn from mistakes, but file is also available in the box folder if you prefer to reuse.</font></p>
 <hr />
 <pre><code class="YAML">---
 # tasks file for vni_provision
@@ -738,7 +738,7 @@ Leaf-4(config)# end
 <p><img alt="" src="../pic/5-4-4.png" /></p>
 </li>
 <li>
-<p>Switch to <strong>MTPutty</strong> and connect to <strong>leaf-4</strong> (SSH connection0, verify the change on leaf switches using command <strong>show nve vni</strong>. Notice the new created L2VNI. </p>
+<p>Switch to <strong>MTPutty</strong> and connect to <strong>leaf-4</strong> (SSH connection0, verify the change on leaf switches using command <strong>show nve vni</strong>. Notice the new created L2VNI.</p>
 <p><img alt="" src="../pic/5-4-5.png" /></p>
 </li>
 </ul>

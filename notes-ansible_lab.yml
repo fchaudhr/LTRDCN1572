@@ -1,0 +1,108 @@
+cat << EOF >> hosts
+#define global variables, groups and host variables
+[all:vars]
+ansible_connection = local
+user=admin
+pwd=C1sco12345
+gather_fact=no
+[jinja2_spine]
+198.18.4.202
+[jinja2_leaf]
+198.18.4.104
+[spine]
+198.18.4.201
+[leaf]
+198.18.4.101
+198.18.4.103
+[server]
+198.18.134.50 eth1=172.21.140.10 gw=172.21.140.1
+198.18.134.52 eth1=172.21.140.11 gw=172.21.140.1
+198.18.134.53 eth1=172.21.141.11 gw=172.21.141.1
+EOF
+
+
+cat << EOF >> ansible.cfg
+[defaults]
+inventory = hosts
+host_key_checking = false
+record_host_key = true
+stdout_callback = debug
+deprecation_warnings = False
+EOF
+
+*  Create host variable file for each host in inventory by using the cat command.  The variable file for a switch is created using the below cat command.  **Note:** you can copy and paste starting from cat till EOF (as shown in below screenshot):
+
+*  Create host variable file for each host in inventory by using the cat command.  The variable file for a switch is created using the below cat command.  **Note:** you can copy and paste starting from cat till EOF (as shown in below screenshot).  **Note:** the spaces in the file are important so do not remove those:
+
+Below screenshot shows the execution of above command:
+
+![](pic/1-9a-4-101.png)
+
+![](pic/1-9a-4-101-more.png)
+
+cat << EOF >> 198.18.4.101.yml
+---
+  hostname: leaf_1
+  loopback0: 192.168.0.8
+  loopback1: 192.168.0.18
+  router_id: 192.168.0.8
+EOF
+
+The variable file for a switch is created using the below cat command.  **Note:** you can copy and paste starting from cat till EOF (as shown in below screenshot).  **Note:** the spaces in the file are important so do not remove those:
+
+cat << EOF >> 198.18.4.103.yml
+---
+  hostname: leaf_3
+  loopback0: 192.168.0.10
+  loopback1: 192.168.0.110
+  router_id: 192.168.0.10
+EOF
+
+more 198.18.4.103.yml
+
+
+The variable file for a switch is created using the below cat command.  **Note:** you can copy and paste starting from cat till EOF (as shown in below screenshot).  **Note:** the spaces in the file are important so do not remove those:
+
+
+cat << EOF >> 198.18.4.104.yml
+---
+  hostname: leaf_4
+  loopback0: 192.168.0.11
+  loopback1: 192.168.0.111
+  router_id: 192.168.0.11
+EOF
+
+
+
+
+cat << EOF >> 198.18.4.201.yml
+---
+  hostname: spine-1
+  loopback0: 192.168.0.6
+  loopback1: 192.168.0.100
+  router_id: 192.168.0.6
+EOF
+
+
+cat << EOF >> 198.18.4.202.yml
+---
+  hostname: spine-2
+  loopback0: 192.168.0.7
+  loopback1: 192.168.0.100
+  router_id: 192.168.0.7
+EOF
+
+########
+
+
+
+ansible-playbook vlan_provision.yml --tags "add vlans"
+
+###
+
+---
+  - hosts: jinja2_spine
+    connection: local
+    roles:
+      - jinja2_spine
+

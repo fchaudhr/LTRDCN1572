@@ -171,7 +171,7 @@
 •   Below is an example of user logging into a reference POD:</p>
 <p><img alt="" src="../pic/1-2-vpn-credentials.png" /></p>
 <ul>
-<li>Hit accept when the prompt appears to accept the VPN connection login    </li>
+<li>Hit accept when the prompt appears to accept the VPN connection login</li>
 </ul>
 <p><img alt="" src="../pic/1-2-vpn-accept.png" /></p>
 <h4 id="step-3-rdp-to-workstation">Step 3: RDP to workstation</h4>
@@ -193,9 +193,10 @@
 <h4 id="step-6-verify-python">Step 6: Verify Python</h4>
 <p>Once successfully SSH into the ansible node, the very first thing we are going to do after logging into Ansible server is verify the python version by running <code>python --version</code> command - as shown below:</p>
 <pre><code>[root@rhel7-tools ~]# python --version
+Python 2.7.5
 </code></pre>
-<p>It is an important step as we need minimum 2.7.5 version of python in order to install some features for ansbile.  The output of above command confirms this version. </p>
-<p>Ansible can be run from any machine with Python 2 (versions 2.6 or 2.7) or Python 3 (versions 3.5 and higher) installed. </p>
+<p>It is an important step as we need minimum 2.7.5 version of python in order to install some features for ansible.  The output of above command confirms this version.</p>
+<p>Ansible can be run from any machine with Python 2 (versions 2.6 or 2.7) or Python 3 (versions 3.5 and higher) installed.</p>
 <p><img alt="" src="../pic/1-6-python.png" /></p>
 <h4 id="step-7-install-pip">Step 7: Install PIP</h4>
 <p>After verifying we have the minimum version of python installed, we are now going to Install PIP python package using <code>easy_install pip</code> command as shown below:</p>
@@ -216,7 +217,7 @@ Finished processing dependencies for pip
 <p>Next, update pip to latest version by executing below command:</p>
 <pre><code>[root@rhel7-tools ~]# pip install --upgrade pip
 </code></pre>
-<p>Below screenshot shows the exection of above command:</p>
+<p>Below screenshot shows the execution of above command:</p>
 <p><img alt="" src="../pic/1-6-3-python.png" /></p>
 <p>After installing PIP package, we are going to add the relevant packages that are needed for this Ansible based VXLAN lab. Below are the packages required for this lab.  </p>
 <ul>
@@ -251,9 +252,11 @@ Finished processing dependencies for pip
 <p><img alt="" src="../pic/1-9-1-dir.png" /></p>
 <p>Next:</p>
 <ul>
-<li>Create Ansible inventory file to include Spine and Leaf switches. </li>
-<li>By default Ansible has inventory file saved in location /etc/ansible/hosts. </li>
-<li>In this lab we will create hosts file in the working environment. You may use <code>vi</code> or <code>vim</code> to create inventory file <code>hosts</code>.  Below this file is created from ansible host prompt using <code>cat</code> command.  <strong>Note:</strong> you can copy and paste starting from cat till EOF (as shown in below screenshot):<pre><code>cat &lt;&lt; EOF &gt;&gt; hosts
+<li>Create Ansible inventory file to include Spine and Leaf switches.</li>
+<li>By default Ansible has inventory file saved in location /etc/ansible/hosts.</li>
+<li>In this lab we will create hosts file in the working environment. You may use <code>vi</code> or <code>vim</code> to create inventory file <code>hosts</code>.  Below this file is created from ansible host prompt using <code>cat</code> command.  <strong>Note:</strong> you can copy and paste starting from cat till EOF (as shown in below screenshot):</li>
+</ul>
+<pre><code>cat &lt;&lt; EOF &gt;&gt; hosts
 #define global variables, groups and host variables
 [all:vars]
 ansible_connection = local
@@ -275,8 +278,7 @@ gather_fact=no
 198.18.134.53 eth1=172.21.141.11 gw=172.21.141.1
 EOF
 </code></pre>
-</li>
-</ul>
+
 <p>Below screenshot shows the output of above command:</p>
 <p><img alt="" src="../pic/1-9a-1-hosts.png" /></p>
 <ul>
@@ -314,7 +316,7 @@ EOF
 <p><img alt="" src="../pic/1-9-3-ls.png" /></p>
 </li>
 <li>
-<p>Create host variable folder named host_vars in folder LTRDCN-1572. Host varilables can be placed in different places in Ansible. In this lab, we will use host_vars for host variables:</p>
+<p>Create host variable folder named host_vars in folder LTRDCN-1572. Host variables can be placed in different places in Ansible. In this lab, we will use host_vars for host variables:</p>
 <pre><code>[root@rhel7-tools LTRDCN-1572]# mkdir host_vars &amp;&amp; cd host_vars
 </code></pre>
 </li>
@@ -322,7 +324,7 @@ EOF
 <p>Create host variable file for each host in inventory by using the cat command.  The variable file for a switch is created using the below cat command.  <strong>Note:</strong> you can copy and paste starting from cat till EOF (as shown in below screenshot).  <strong>Note:</strong> the spaces in the file are important so do not remove those:</p>
 </li>
 </ul>
-<pre><code class="YAML">cat &lt;&lt; EOF &gt;&gt; 198.18.4.101.yml
+<pre><code>cat &lt;&lt; EOF &gt;&gt; 198.18.4.101.yml
 ---
   hostname: leaf_1
   loopback0: 192.168.0.8
@@ -419,13 +421,13 @@ EOF
 <p>Below screenshot shows the execution of above commands:</p>
 <p><img alt="" src="../pic/1-9a-4-202.png" /></p>
 <h4 id="step-10-ansible-role-structure">Step 10: Ansible role structure</h4>
-<p>Role is very useful technique to manage a set of playbooks in Ansible. 
-In this lab, we will use two different playbooks to manage configuration for Spine and Leaf switches. </p>
-<p>We will use role structure and manage the two plays into single playbook. 
-A role directory structure contains several directories of defaults, vars, files, handlers, meta, tasks and templates. </p>
+<p>Role is very useful technique to manage a set of playbooks in Ansible.
+In this lab, we will use two different playbooks to manage configuration for Spine and Leaf switches.</p>
+<p>We will use role structure and manage the two plays into single playbook.
+A role directory structure contains several directories of defaults, vars, files, handlers, meta, tasks and templates.</p>
 <p>In this lab:</p>
 <ul>
-<li>we will use vars, templates and tasks folders <code>/vars</code> </li>
+<li>we will use vars, templates and tasks folders <code>/vars</code></li>
 <li>main.yml file in vars folder contains dictionary of variables for this role <code>/tasks</code></li>
 <li>main.yml file in tasks folder contains the Ansible playbook for this role</li>
 </ul>

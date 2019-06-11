@@ -81,76 +81,31 @@
     <li class="toctree-l2"><a href="#step-1-create-new-playbook">Step 1: Create new playbook</a></li>
     
 
-    <li class="toctree-l2"><a href="#step-2-create-new-roles-and-vars">Step 2: Create new roles and vars</a></li>
-    
-
-    <li class="toctree-l2"><a href="#step-3-build-playbook-for-spine-role-tasks">Step 3: Build playbook for Spine role - tasks:</a></li>
-    
-
-    <li class="toctree-l2"><a href="#step-4-build-playbook-for-spine-role-vars">Step 4:  Build playbook for Spine role - vars</a></li>
-    
-
-    <li class="toctree-l2"><a href="#step-5-build-playbook-for-leaf-role-tasks">Step 5:  Build playbook for leaf role - tasks:</a></li>
-    
-
-    <li class="toctree-l2"><a href="#step-6-build-playbook-for-leaf-role-vars">Step 6: Build playbook for leaf role - vars</a></li>
-    
-
-    <li class="toctree-l2"><a href="#step-7-execute-playbook">Step 7: Execute playbook</a></li>
-    
-
-    <li class="toctree-l2"><a href="#step-8-configure-multicast-using-ansible-nxos">Step 8: Configure Multicast using Ansible NXOS</a></li>
+    <li class="toctree-l2"><a href="#_1">```</a></li>
     
         <ul>
         
-            <li><a class="toctree-l3" href="#edit-playbook-for-spine-role">Edit playbook for spine role</a></li>
+            <li><a class="toctree-l3" href="#step-2-create-new-roles-and-vars">Step 2: Create new roles and vars</a></li>
         
-            <li><a class="toctree-l3" href="#edit-variable-file-for-spine-role">Edit variable file for Spine role</a></li>
+            <li><a class="toctree-l3" href="#step-3-build-playbook-for-spine-role-tasks">Step 3: Build playbook for Spine role - tasks:</a></li>
         
-            <li><a class="toctree-l3" href="#edit-playbook-for-leaf-role">Edit playbook for leaf role</a></li>
+            <li><a class="toctree-l3" href="#step-4-build-playbook-for-spine-role-vars">Step 4:  Build playbook for Spine role - vars</a></li>
         
-            <li><a class="toctree-l3" href="#edit-variable-file-for-leaf-role">Edit variable file for leaf role</a></li>
+            <li><a class="toctree-l3" href="#step-5-build-playbook-for-leaf-role-tasks">Step 5:  Build playbook for leaf role - tasks:</a></li>
         
-            <li><a class="toctree-l3" href="#run-the-playbook-and-verify-configuration-changes">Run the playbook and verify configuration changes</a></li>
+            <li><a class="toctree-l3" href="#step-6-build-playbook-for-leaf-role-vars">Step 6: Build playbook for leaf role - vars</a></li>
         
-        </ul>
-    
-
-    <li class="toctree-l2"><a href="#step-9-configure-vxlan-using-ansible">Step 9: Configure VXLAN using Ansible</a></li>
-    
-        <ul>
+            <li><a class="toctree-l3" href="#step-7-execute-playbook">Step 7: Execute playbook</a></li>
         
-            <li><a class="toctree-l3" href="#edit-playbook-for-spine-role_1">Edit playbook for spine role</a></li>
+            <li><a class="toctree-l3" href="#step-8-configure-multicast-using-ansible-nxos">Step 8: Configure Multicast using Ansible NXOS</a></li>
         
-            <li><a class="toctree-l3" href="#edit-variable-file-for-spine-role_1">Edit variable file for Spine role</a></li>
+            <li><a class="toctree-l3" href="#step-9-configure-vxlan-using-ansible">Step 9: Configure VXLAN using Ansible</a></li>
         
-            <li><a class="toctree-l3" href="#edit-playbook-for-leaf-role_1">Edit playbook for leaf role</a></li>
+            <li><a class="toctree-l3" href="#step-10-configure-evpn-using-ansible">Step 10: Configure EVPN using Ansible</a></li>
         
-            <li><a class="toctree-l3" href="#edit-variable-file-for-leaf-role_1">Edit variable file for leaf role</a></li>
-        
-            <li><a class="toctree-l3" href="#run-the-playbook-and-verify-configuration-changes_1">Run the playbook and verify configuration changes</a></li>
+            <li><a class="toctree-l3" href="#step-11-run-nxos_fabric-playbook">Step 11: Run nxos_fabric playbook</a></li>
         
         </ul>
-    
-
-    <li class="toctree-l2"><a href="#step-10-configure-evpn-using-ansible">Step 10: Configure EVPN using Ansible</a></li>
-    
-        <ul>
-        
-            <li><a class="toctree-l3" href="#edit-playbook-for-spine-role_2">Edit playbook for spine role</a></li>
-        
-            <li><a class="toctree-l3" href="#edit-variable-file-for-spine-role_2">Edit variable file for Spine role</a></li>
-        
-            <li><a class="toctree-l3" href="#edit-playbook-for-leaf-role_2">Edit playbook for leaf role</a></li>
-        
-            <li><a class="toctree-l3" href="#edit-variable-file-for-leaf-role_2">Edit variable file for leaf role</a></li>
-        
-            <li><a class="toctree-l3" href="#run-the-playbook-and-verify-configuration-changes_2">Run the playbook and verify configuration changes</a></li>
-        
-        </ul>
-    
-
-    <li class="toctree-l2"><a href="#step-11-run-nxos_fabric-playbook">Step 11: Run nxos_fabric playbook</a></li>
     
 
     </ul>
@@ -229,13 +184,13 @@
 </tr>
 <tr>
 <td align="center">Nxos_bgp_neighbor_af</td>
-<td align="center">Manage BGP neighbor address-famility config</td>
+<td align="center">Manage BGP neighbor address-family config</td>
 </tr>
 </tbody>
 </table>
-<p>In comparison to Jinja2, NXOS modules are more abstract from configurations. There is no need to have knowledge of NXOS CLI to use NXOS modules. You will follow the steps to configure BGP, Multicast, VXLAN and EVPN. In each step, you will use different Ansible NXOS modules to accomplish the step. </p>
+<p>In comparison to Jinja2, NXOS modules are more abstract from configurations. There is no need to have knowledge of NXOS CLI to use NXOS modules. You will follow the steps to configure BGP, Multicast, VXLAN and EVPN. In each step, you will use different Ansible NXOS modules to accomplish the step.</p>
 <p><img alt="" src="../pic/4-0-1.png" /></p>
-<p>After each step, you can login the switches to verify configuration changes. </p>
+<p>After each step, you can login the switches to verify configuration changes.</p>
 <hr />
 <h3 id="step-1-create-new-playbook">Step 1: Create new playbook</h3>
 <p>Again we will use roles structure to make the playbook more modular.  The roles included in the new playbook are “<strong>spine</strong>” and “<strong>leaf</strong>”.  </p>
@@ -245,32 +200,52 @@
 </li>
 <li>
 <p>In the <code>nxos_fabric.yml</code> enter the content as shown in below screenshot:</p>
-<p><img alt="" src="../pic/4-1-1.png" /></p>
+<h2 id="_1">```</h2>
+<ul>
+<li>
+<p>hosts: spine
+  connection: local
+  roles:</p>
+<ul>
+<li>spine</li>
+</ul>
 </li>
 <li>
-<p><strong>Click</strong> <code>File</code> and <code>Save</code> . This will save the playbook, and also ftp the playbook to Ansible server using pre-configured “<strong>remote-sync</strong>” package. </p>
+<p>hosts: leaf
+  connection: local
+  roles:</p>
+<ul>
+<li>leaf
+```</li>
+</ul>
 </li>
+</ul>
+</li>
+</ul>
+<p><img alt="" src="../pic/4-1-1.png" /></p>
+<ul>
+<li><strong>Click</strong> <code>File</code> and <code>Save</code> . This will save the playbook, and also ftp the playbook to Ansible server using pre-configured “<strong>remote-sync</strong>” package.</li>
 </ul>
 <hr />
 <h3 id="step-2-create-new-roles-and-vars">Step 2: Create new roles and vars</h3>
 <ul>
 <li>
-<p>On the MTputty, go back to Ansible Server node (198.18.134.150), switch to ‘<strong>roles</strong>’ directory; <strong>create</strong> ‘spine’ and ‘leaf’ roles using ansible-galaxy as per below commands: </p>
+<p>On the MTputty, go back to Ansible Server node (198.18.134.150), switch to ‘<strong>roles</strong>’ directory; <strong>create</strong> ‘spine’ and ‘leaf’ roles using ansible-galaxy as per below commands:</p>
 <pre><code>[root@rhel7-tools LTRDCN-1572]# cd ~/LTRDCN-1572/roles/
 [root@rhel7-tools roles]# ansible-galaxy init spine &amp;&amp; ansible-galaxy init leaf
 </code></pre>
-<p>Below screeshot shows the output of above command:</p>
-<p><img alt="" src="../pic/4-2-1.png" /></p>
+<p>Below screenshot shows the output of above command:</p>
 </li>
 </ul>
-<p>​ <br />
+<p><img alt="" src="../pic/4-2-1.png" /></p>
+<p>​
 *  Switch to “<strong>Atom</strong>” and sync the new created folders between Ansible node and Remote desktop by pressing <strong>Right Click</strong> on the folder <code>LTRDDCN-1572</code>, then open <code>Remote Sync</code> select <code>Download Folder</code> as shown below:</p>
 <p><img alt="" src="../pic/4-2-2.png" /></p>
 <hr />
 <h3 id="step-3-build-playbook-for-spine-role-tasks">Step 3: Build playbook for Spine role - tasks:</h3>
-<p>“<strong>ansible-galaxy</strong>” automatically creates empty “<strong>main.yml</strong>” file under “<strong>tasks</strong>” folder.  We are going to use “<strong>Atom</strong>” to edit the <strong>main.yml</strong> file. </p>
+<p>“<strong>ansible-galaxy</strong>” automatically creates empty “<strong>main.yml</strong>” file under “<strong>tasks</strong>” folder.  We are going to use “<strong>Atom</strong>” to edit the <strong>main.yml</strong> file.</p>
 <ul>
-<li>On ATOM, open up the project folder <code>LTRDCN-1572</code> and edit <code>main.yml</code> file under <code>roles/spine/tasks/</code> to include following: </li>
+<li>On ATOM, open up the project folder <code>LTRDCN-1572</code> and edit <code>main.yml</code> file under <code>roles/spine/tasks/</code> to include following:</li>
 </ul>
 <hr />
 <p><font style=background-color:yellow><strong>Note: It is recommended to write your playbook and learn from mistakes, but file is also available in the box folder if you prefer to reuse.</strong></font></p>
@@ -321,7 +296,7 @@
 </code></pre>
 
 <ul>
-<li><strong>Click</strong> <code>File</code> and <code>Save</code> . This will save the playbook, and also ftp the playbook to Ansible server using pre-configured “<strong>remote-sync</strong>” package. </li>
+<li><strong>Click</strong> <code>File</code> and <code>Save</code> . This will save the playbook, and also ftp the playbook to Ansible server using pre-configured “<strong>remote-sync</strong>” package.</li>
 </ul>
 <p><strong>Note</strong>, in the above task/main.yml file multiple NXOS ansible modules have been used:</p>
 <ul>
@@ -365,13 +340,13 @@
 </code></pre>
 
 <ul>
-<li><strong>Click</strong> <code>File</code> and <code>Save</code> . This will save the playbook, and also ftp the playbook to Ansible server using pre-configured “<strong>remote-sync</strong>” package. </li>
+<li><strong>Click</strong> <code>File</code> and <code>Save</code> . This will save the playbook, and also ftp the playbook to Ansible server using pre-configured “<strong>remote-sync</strong>” package.</li>
 </ul>
 <hr />
 <h3 id="step-5-build-playbook-for-leaf-role-tasks">Step 5:  Build playbook for leaf role - tasks:</h3>
 <p>“<strong>ansible-galaxy</strong>” automatically creates empty “<strong>main.yml</strong>” file under “<strong>tasks</strong>” folder. We can use “<strong>Atom</strong>” to edit the main.yml file</p>
 <ul>
-<li>On ATOM, open up the project folder <code>LTRDCN-1572</code> and edit <code>main.yml</code> file under <code>roles/leaf/tasks/</code> to include following: </li>
+<li>On ATOM, open up the project folder <code>LTRDCN-1572</code> and edit <code>main.yml</code> file under <code>roles/leaf/tasks/</code> to include following:</li>
 </ul>
 <pre><code class="YAML">---
 # tasks file for leaf
@@ -418,7 +393,7 @@
 </code></pre>
 
 <ul>
-<li><strong>Click</strong> <code>File</code> and <code>Save</code> . This will save the playbook, and also ftp the playbook to Ansible server using pre-configured “<strong>remote-sync</strong>” package. </li>
+<li><strong>Click</strong> <code>File</code> and <code>Save</code> . This will save the playbook, and also ftp the playbook to Ansible server using pre-configured “<strong>remote-sync</strong>” package.</li>
 </ul>
 <hr />
 <h3 id="step-6-build-playbook-for-leaf-role-vars">Step 6: Build playbook for leaf role - vars</h3>
@@ -444,7 +419,7 @@
 </code></pre>
 
 <ul>
-<li><strong>Click</strong> <code>File</code> and <code>Save</code> . This will save the playbook, and also ftp the playbook to Ansible server using pre-configured “<strong>remote-sync</strong>” package. </li>
+<li><strong>Click</strong> <code>File</code> and <code>Save</code> . This will save the playbook, and also ftp the playbook to Ansible server using pre-configured “<strong>remote-sync</strong>” package.</li>
 </ul>
 <hr />
 <h3 id="step-7-execute-playbook">Step 7: Execute playbook</h3>
@@ -456,10 +431,10 @@
 </code></pre>
 <p>Below screenshots shows the execution of above playbook:
 <img alt="" src="../pic/4-3-1.png" />
-<img alt="" src="../pic/4-3-2.png" />  </p>
+<img alt="" src="../pic/4-3-2.png" /></p>
 </li>
 <li>
-<p>After the configuration push is successful, <strong>login</strong> (on MTputty SSH session) to <strong>leaf-1, leaf-3 or leaf-4</strong> or <strong>spine-1</strong> switch to verify configuration has been pushed by running below command and BGP neighbours are operational:</p>
+<p>After the configuration push is successful, <strong>login</strong> (on MTputty SSH session) to <strong>leaf-1, leaf-3 or leaf-4</strong> or <strong>spine-1</strong> switch to verify configuration has been pushed by running below command and BGP neighbors are operational:</p>
 <pre><code>show ip bgp summary
 </code></pre>
 <p>The output of above command is shown below:</p>
@@ -469,8 +444,8 @@
 </ul>
 <hr />
 <h3 id="step-8-configure-multicast-using-ansible-nxos">Step 8: Configure Multicast using Ansible NXOS</h3>
-<p>In this section, we will be configuring underlay multicast to support BUM traffic in the VXLAN fabric. The NXOS modules we will be using in this section are 
-nxos_feature    Manage fatures on Nexus switchs 
+<p>In this section, we will be configuring underlay multicast to support BUM traffic in the VXLAN fabric. The NXOS modules we will be using in this section are
+nxos_feature    Manage features on Nexus switches
 nxos_pim_interface  Manage PIM interface configuration</p>
 <table>
 <thead>
@@ -503,10 +478,10 @@ nxos_pim_interface  Manage PIM interface configuration</p>
 <hr />
 <h5 id="edit-playbook-for-spine-role">Edit playbook for spine role</h5>
 <ul>
-<li>Use <strong>“Atom”</strong> to edit the <strong>“main.yml”</strong> file. Open up the project folder <strong>“LTRDCN-1572”</strong> and open <strong>“main.yml”</strong> file under <strong>“roles/spine/tasks/”</strong> and save the below tasks at the end the file: </li>
+<li>Use <strong>“Atom”</strong> to edit the <strong>“main.yml”</strong> file. Open up the project folder <strong>“LTRDCN-1572”</strong> and open <strong>“main.yml”</strong> file under <strong>“roles/spine/tasks/”</strong> and save the below tasks at the end the file:</li>
 </ul>
 <hr />
-<p><font style=background-color:yellow>Note: It is recommended to write your playbook and learn from mistakes, but file is also available in the box folder if you prefer to reuse.</font> </p>
+<p><font style=background-color:yellow>Note: It is recommended to write your playbook and learn from mistakes, but file is also available in the box folder if you prefer to reuse.</font></p>
 <hr />
 <pre><code class="YAML">#task to enable pim and configure anycast rp for underlay multicast
        - name: Enable PIM
@@ -557,7 +532,7 @@ nxos_pim_interface  Manage PIM interface configuration</p>
 </code></pre>
 
 <ul>
-<li><strong>Click</strong> <code>File</code> and <code>Save</code> . This will save the playbook, and also ftp the playbook to Ansible server using pre-configured “<strong>remote-sync</strong>” package. </li>
+<li><strong>Click</strong> <code>File</code> and <code>Save</code> . This will save the playbook, and also ftp the playbook to Ansible server using pre-configured “<strong>remote-sync</strong>” package.</li>
 </ul>
 <h5 id="edit-variable-file-for-spine-role">Edit variable file for Spine role</h5>
 <ul>
@@ -575,14 +550,14 @@ nxos_pim_interface  Manage PIM interface configuration</p>
 </code></pre>
 
 <ul>
-<li><strong>Click</strong> <code>File</code> and <code>Save</code> . This will save the playbook, and also ftp the playbook to Ansible server using pre-configured “<strong>remote-sync</strong>” package. </li>
+<li><strong>Click</strong> <code>File</code> and <code>Save</code> . This will save the playbook, and also ftp the playbook to Ansible server using pre-configured “<strong>remote-sync</strong>” package.</li>
 </ul>
 <h5 id="edit-playbook-for-leaf-role">Edit playbook for leaf role</h5>
 <ul>
 <li>use <strong>“Atom”</strong> to edit the main.yml file. Open up the project folder <strong>“LTRDCN-1572”</strong> and open main.yml file under <strong>“roles/leaf/tasks/”</strong>.   On Atom, Make sure to click <strong>File-&gt;Save</strong> after entering the below data in this file so it is pushed to Ansible server:</li>
 </ul>
 <hr />
-<p><font style=background-color:yellow>Note: It is recommended to write your playbook and learn from mistakes, but file is also available in the box folder if you prefer to reuse.</font> </p>
+<p><font style=background-color:yellow>Note: It is recommended to write your playbook and learn from mistakes, but file is also available in the box folder if you prefer to reuse.</font></p>
 <hr />
 <pre><code class="YAML">#task to enable PIM for underlay multicast
        - name: Enable PIM
@@ -606,7 +581,7 @@ nxos_pim_interface  Manage PIM interface configuration</p>
 </code></pre>
 
 <ul>
-<li><strong>Click</strong> <code>File</code> and <code>Save</code> . This will save the playbook, and also ftp the playbook to Ansible server using pre-configured “<strong>remote-sync</strong>” package. </li>
+<li><strong>Click</strong> <code>File</code> and <code>Save</code> . This will save the playbook, and also ftp the playbook to Ansible server using pre-configured “<strong>remote-sync</strong>” package.</li>
 </ul>
 <h5 id="edit-variable-file-for-leaf-role">Edit variable file for leaf role</h5>
 <ul>
@@ -621,7 +596,7 @@ nxos_pim_interface  Manage PIM interface configuration</p>
 </code></pre>
 
 <ul>
-<li><strong>Click</strong> <code>File</code> and <code>Save</code> . This will save the playbook, and also ftp the playbook to Ansible server using pre-configured “<strong>remote-sync</strong>” package. </li>
+<li><strong>Click</strong> <code>File</code> and <code>Save</code> . This will save the playbook, and also ftp the playbook to Ansible server using pre-configured “<strong>remote-sync</strong>” package.</li>
 </ul>
 <h5 id="run-the-playbook-and-verify-configuration-changes">Run the playbook and verify configuration changes</h5>
 <pre><code>[root@rhel7-tools LTRDCN-1572]# ansible-playbook nxos_fabric.yml --tags "multicast"
@@ -639,7 +614,7 @@ nxos_pim_interface  Manage PIM interface configuration</p>
 <p><img alt="" src="../pic/4-4-3.png" /></p>
 <hr />
 <h3 id="step-9-configure-vxlan-using-ansible">Step 9: Configure VXLAN using Ansible</h3>
-<p>In this section, we will be configuring VXLAN on leaf and spine switches. The NXOS modules we will be using in this section are </p>
+<p>In this section, we will be configuring VXLAN on leaf and spine switches. The NXOS modules we will be using in this section are</p>
 <table>
 <thead>
 <tr>
@@ -666,7 +641,7 @@ nxos_pim_interface  Manage PIM interface configuration</p>
 </tr>
 <tr>
 <td>nxos_vrf_af</td>
-<td>Manages VRF address falimily</td>
+<td>Manages VRF address family</td>
 </tr>
 <tr>
 <td>nxos_overlay_global</td>
@@ -687,7 +662,7 @@ nxos_pim_interface  Manage PIM interface configuration</p>
 <li>Use <strong>“Atom”</strong> to edit the “main.yml” file. Open up the project folder <strong>“LTRDCN-1572”</strong> and open “main.yml” file under <strong>“roles/spine/tasks/”</strong>.   </li>
 </ul>
 <hr />
-<p><font style=background-color:yellow>Note: It is recommended to write your playbook and learn from mistakes, but file is also available in the box folder if you prefer to reuse.<font> </p>
+<p><font style=background-color:yellow>Note: It is recommended to write your playbook and learn from mistakes, but file is also available in the box folder if you prefer to reuse.<font></p>
 <hr />
 <pre><code class="YAML">#task to configure vxlan fabric
        - name: Enable VXLAN Feature
@@ -707,16 +682,16 @@ nxos_pim_interface  Manage PIM interface configuration</p>
 </code></pre>
 
 <ul>
-<li><strong>Click</strong> <code>File</code> and <code>Save</code> . This will save the playbook, and also ftp the playbook to Ansible server using pre-configured “<strong>remote-sync</strong>” package. </li>
+<li><strong>Click</strong> <code>File</code> and <code>Save</code> . This will save the playbook, and also ftp the playbook to Ansible server using pre-configured “<strong>remote-sync</strong>” package.</li>
 </ul>
 <h5 id="edit-variable-file-for-spine-role_1">Edit variable file for Spine role</h5>
-<p>No new variable required for Spine </p>
+<p>No new variable required for Spine</p>
 <h5 id="edit-playbook-for-leaf-role_1">Edit playbook for leaf role</h5>
 <ul>
 <li>use <strong>“Atom”</strong> to edit the main.yml file. Open up the project folder <strong>“LTRDCN-1572”</strong> and open “main.yml” file under <strong>“roles/leaf/tasks/”</strong>.  Add the below content in the file in addition to existing content, and then make sure to click <strong>“File”-&gt;“Save”</strong> on Atom, so that the updated file is pushed to Ansible server.</li>
 </ul>
 <hr />
-<p><font style=background-color:yellow>Note: It is recommended to write your playbook and learn from mistakes, but file is also available in the box folder if you prefer to reuse.</font> </p>
+<p><font style=background-color:yellow>Note: It is recommended to write your playbook and learn from mistakes, but file is also available in the box folder if you prefer to reuse.</font></p>
 <hr />
 <pre><code class="YAML">#task to configure VXLAN fabric
        - name: Enable VXLAN Feature
@@ -829,7 +804,7 @@ nxos_pim_interface  Manage PIM interface configuration</p>
 </code></pre>
 
 <ul>
-<li><strong>Click</strong> <code>File</code> and <code>Save</code> . This will save the playbook, and also ftp the playbook to Ansible server using pre-configured “<strong>remote-sync</strong>” package. </li>
+<li><strong>Click</strong> <code>File</code> and <code>Save</code> . This will save the playbook, and also ftp the playbook to Ansible server using pre-configured “<strong>remote-sync</strong>” package.</li>
 </ul>
 <h5 id="edit-variable-file-for-leaf-role_1">Edit variable file for leaf role</h5>
 <ul>
@@ -843,7 +818,7 @@ nxos_pim_interface  Manage PIM interface configuration</p>
 </code></pre>
 
 <ul>
-<li><strong>Click</strong> <code>File</code> and <code>Save</code> . This will save the playbook, and also ftp the playbook to Ansible server using pre-configured “<strong>remote-sync</strong>” package. </li>
+<li><strong>Click</strong> <code>File</code> and <code>Save</code> . This will save the playbook, and also ftp the playbook to Ansible server using pre-configured “<strong>remote-sync</strong>” package.</li>
 </ul>
 <h5 id="run-the-playbook-and-verify-configuration-changes_1">Run the playbook and verify configuration changes</h5>
 <ul>
@@ -859,12 +834,12 @@ nxos_pim_interface  Manage PIM interface configuration</p>
 <li>
 <p>After finishing this task: <strong>login</strong> to any leaf switch (on MTPutty) to verify VXLAN configuration and the VNI by issuing the command:  <code>show nve vni</code></p>
 <p>Below screenshot shows the output of above command from Leaf-4:</p>
-<p><img alt="" src="../pic/4-5-2.png" /> </p>
+<p><img alt="" src="../pic/4-5-2.png" /></p>
 </li>
 </ul>
 <hr />
 <h3 id="step-10-configure-evpn-using-ansible">Step 10: Configure EVPN using Ansible</h3>
-<p>In this section, we will be configuring BGP EVPN on leaf and spine switches. The NXOS modules we will be using in this section are </p>
+<p>In this section, we will be configuring BGP EVPN on leaf and spine switches. The NXOS modules we will be using in this section are</p>
 <table>
 <thead>
 <tr>
@@ -875,11 +850,11 @@ nxos_pim_interface  Manage PIM interface configuration</p>
 <tbody>
 <tr>
 <td>nxos_bgp_af</td>
-<td>Manage BGP address-famility config</td>
+<td>Manage BGP address-family config</td>
 </tr>
 <tr>
 <td>nxos_bgp_neighbor_af</td>
-<td>Manage BGP neighbor address-famility config</td>
+<td>Manage BGP neighbor address-family config</td>
 </tr>
 <tr>
 <td>nxos_evpn_vni</td>
@@ -890,10 +865,10 @@ nxos_pim_interface  Manage PIM interface configuration</p>
 <h5 id="edit-playbook-for-spine-role_2">Edit playbook for spine role</h5>
 <ul>
 <li>Use <strong>“Atom”</strong> to edit the main.yml file. Open up the project folder <strong>“LTRDCN-1572”</strong> and open “main.yml” file under <strong>“roles/spine/tasks/”</strong>.  Add the below content in the file in addition to existing content,</li>
-<li>Then make sure to click <strong>“File”-&gt;“Save”</strong> on Atom, so that the updated file is pushed to Ansible server. </li>
+<li>Then make sure to click <strong>“File”-&gt;“Save”</strong> on Atom, so that the updated file is pushed to Ansible server.</li>
 </ul>
 <hr />
-<p><font style=backgroun-color:yellow>Note: It is recommended to write your playbook and learn from mistakes, but file is also available in the box folder if you prefer to reuse.</font> </p>
+<p><font style=backgroun-color:yellow>Note: It is recommended to write your playbook and learn from mistakes, but file is also available in the box folder if you prefer to reuse.</font></p>
 <hr />
 <pre><code class="YAML"># task to configure BGP EVPN
        - name: Configure BGP EVPN
@@ -917,13 +892,13 @@ nxos_pim_interface  Manage PIM interface configuration</p>
 </code></pre>
 
 <h5 id="edit-variable-file-for-spine-role_2">Edit variable file for Spine role</h5>
-<p>No new variables required for Spine </p>
+<p>No new variables required for Spine</p>
 <h5 id="edit-playbook-for-leaf-role_2">Edit playbook for leaf role</h5>
 <ul>
 <li>use <strong>“Atom”</strong> to edit the “main.yml” file. Open up the project folder <strong>“LTRDCN-1572”</strong> and open “main.yml” file under <strong>“roles/leaf/tasks/”</strong>.  Add the below content in the file in addition to existing content, and then make sure to click <strong>“File”-&gt;“Save”</strong> on Atom, so that the updated file is pushed to Ansible server.</li>
 </ul>
 <hr />
-<p><font style=background-color:yellow>Note: It is recommended to write your playbook and learn from mistakes, but file is also available in the box folder if you prefer to reuse.</font> </p>
+<p><font style=background-color:yellow>Note: It is recommended to write your playbook and learn from mistakes, but file is also available in the box folder if you prefer to reuse.</font></p>
 <hr />
 <pre><code class="YAML">#task to configure BGP EVPN
        - name: Configure BGP EVPN
@@ -954,7 +929,7 @@ nxos_pim_interface  Manage PIM interface configuration</p>
 </code></pre>
 
 <ul>
-<li><strong>Click</strong> <code>File</code> and <code>Save</code> . This will save the playbook, and also ftp the playbook to Ansible server using pre-configured “<strong>remote-sync</strong>” package. </li>
+<li><strong>Click</strong> <code>File</code> and <code>Save</code> . This will save the playbook, and also ftp the playbook to Ansible server using pre-configured “<strong>remote-sync</strong>” package.</li>
 </ul>
 <h5 id="edit-variable-file-for-leaf-role_2">Edit variable file for leaf role</h5>
 <p>No new variables required for Leaf</p>
@@ -968,7 +943,7 @@ nxos_pim_interface  Manage PIM interface configuration</p>
 <p><img alt="" src="../pic/4-6-1.png" /></p>
 </li>
 <li>
-<p>After successful execution of the playbook: <strong>login</strong> to <strong>any leaf or spine</strong> switch to verify BGP EVPN configuration and evpn negibor by using command: </p>
+<p>After successful execution of the playbook: <strong>login</strong> to <strong>any leaf or spine</strong> switch to verify BGP EVPN configuration and evpn negibor by using command:</p>
 <pre><code>show bgp l2vpn evpn summary
 </code></pre>
 <p>Below screenshot shows the output of above command from leaf-4 switch.  As expected it shows the spine-1 and spine-2 as neighbors:</p>
@@ -978,14 +953,14 @@ nxos_pim_interface  Manage PIM interface configuration</p>
 <hr />
 <h3 id="step-11-run-nxos_fabric-playbook">Step 11: Run nxos_fabric playbook</h3>
 <ul>
-<li>Up on this point, you have run the playbook during each step. You could re-run the whole playbook without giving any tags, but no new changes should be maded to the switches. <pre><code>[root@rhel7-tools LTRDCN-1572]# ansible-playbook nxos_fabric.yml
+<li>Up on this point, you have run the playbook during each step. You could re-run the whole playbook without giving any tags, but no new changes should be maded to the switches.<pre><code>[root@rhel7-tools LTRDCN-1572]# ansible-playbook nxos_fabric.yml
 </code></pre>
 </li>
 </ul>
 <hr />
-<p><strong>Congratulation!</strong> You have just built VXLAN fabric using ansible + Jinja2 template and ansible + NXOS modules. </p>
+<p><strong>Congratulation!</strong> You have just built VXLAN fabric using ansible + Jinja2 template and ansible + NXOS modules.</p>
 <ul>
-<li>Let’s verify the VXLAN bridging and VXLAN routing from servers that are pre-configured in following VLANs and IPs </li>
+<li>Let’s verify the VXLAN bridging and VXLAN routing from servers that are pre-configured in following VLANs and IPs</li>
 </ul>
 <table>
 <thead>
@@ -1022,7 +997,7 @@ nxos_pim_interface  Manage PIM interface configuration</p>
 <p>Switch to MTPuTTY and connect to server-1 with root/C1sco12345</p>
 </li>
 <li>
-<p>Ping default gateway from server-1 </p>
+<p>Ping default gateway from server-1</p>
 </li>
 </ul>
 <pre><code>[root@server-1 ~]# ping 172.21.140.1
