@@ -81,31 +81,76 @@
     <li class="toctree-l2"><a href="#step-1-create-new-playbook">Step 1: Create new playbook</a></li>
     
 
-    <li class="toctree-l2"><a href="#_1">```</a></li>
+    <li class="toctree-l2"><a href="#step-2-create-new-roles-and-vars">Step 2: Create new roles and vars</a></li>
+    
+
+    <li class="toctree-l2"><a href="#step-3-build-playbook-for-spine-role-tasks">Step 3: Build playbook for Spine role - tasks:</a></li>
+    
+
+    <li class="toctree-l2"><a href="#step-4-build-playbook-for-spine-role-vars">Step 4:  Build playbook for Spine role - vars</a></li>
+    
+
+    <li class="toctree-l2"><a href="#step-5-build-playbook-for-leaf-role-tasks">Step 5:  Build playbook for leaf role - tasks:</a></li>
+    
+
+    <li class="toctree-l2"><a href="#step-6-build-playbook-for-leaf-role-vars">Step 6: Build playbook for leaf role - vars</a></li>
+    
+
+    <li class="toctree-l2"><a href="#step-7-execute-playbook">Step 7: Execute playbook</a></li>
+    
+
+    <li class="toctree-l2"><a href="#step-8-configure-multicast-using-ansible-nxos">Step 8: Configure Multicast using Ansible NXOS</a></li>
     
         <ul>
         
-            <li><a class="toctree-l3" href="#step-2-create-new-roles-and-vars">Step 2: Create new roles and vars</a></li>
+            <li><a class="toctree-l3" href="#edit-playbook-for-spine-role">Edit playbook for spine role</a></li>
         
-            <li><a class="toctree-l3" href="#step-3-build-playbook-for-spine-role-tasks">Step 3: Build playbook for Spine role - tasks:</a></li>
+            <li><a class="toctree-l3" href="#edit-variable-file-for-spine-role">Edit variable file for Spine role</a></li>
         
-            <li><a class="toctree-l3" href="#step-4-build-playbook-for-spine-role-vars">Step 4:  Build playbook for Spine role - vars</a></li>
+            <li><a class="toctree-l3" href="#edit-playbook-for-leaf-role">Edit playbook for leaf role</a></li>
         
-            <li><a class="toctree-l3" href="#step-5-build-playbook-for-leaf-role-tasks">Step 5:  Build playbook for leaf role - tasks:</a></li>
+            <li><a class="toctree-l3" href="#edit-variable-file-for-leaf-role">Edit variable file for leaf role</a></li>
         
-            <li><a class="toctree-l3" href="#step-6-build-playbook-for-leaf-role-vars">Step 6: Build playbook for leaf role - vars</a></li>
-        
-            <li><a class="toctree-l3" href="#step-7-execute-playbook">Step 7: Execute playbook</a></li>
-        
-            <li><a class="toctree-l3" href="#step-8-configure-multicast-using-ansible-nxos">Step 8: Configure Multicast using Ansible NXOS</a></li>
-        
-            <li><a class="toctree-l3" href="#step-9-configure-vxlan-using-ansible">Step 9: Configure VXLAN using Ansible</a></li>
-        
-            <li><a class="toctree-l3" href="#step-10-configure-evpn-using-ansible">Step 10: Configure EVPN using Ansible</a></li>
-        
-            <li><a class="toctree-l3" href="#step-11-run-nxos_fabric-playbook">Step 11: Run nxos_fabric playbook</a></li>
+            <li><a class="toctree-l3" href="#run-the-playbook-and-verify-configuration-changes">Run the playbook and verify configuration changes</a></li>
         
         </ul>
+    
+
+    <li class="toctree-l2"><a href="#step-9-configure-vxlan-using-ansible">Step 9: Configure VXLAN using Ansible</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#edit-playbook-for-spine-role_1">Edit playbook for spine role</a></li>
+        
+            <li><a class="toctree-l3" href="#edit-variable-file-for-spine-role_1">Edit variable file for Spine role</a></li>
+        
+            <li><a class="toctree-l3" href="#edit-playbook-for-leaf-role_1">Edit playbook for leaf role</a></li>
+        
+            <li><a class="toctree-l3" href="#edit-variable-file-for-leaf-role_1">Edit variable file for leaf role</a></li>
+        
+            <li><a class="toctree-l3" href="#run-the-playbook-and-verify-configuration-changes_1">Run the playbook and verify configuration changes</a></li>
+        
+        </ul>
+    
+
+    <li class="toctree-l2"><a href="#step-10-configure-evpn-using-ansible">Step 10: Configure EVPN using Ansible</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#edit-playbook-for-spine-role_2">Edit playbook for spine role</a></li>
+        
+            <li><a class="toctree-l3" href="#edit-variable-file-for-spine-role_2">Edit variable file for Spine role</a></li>
+        
+            <li><a class="toctree-l3" href="#edit-playbook-for-leaf-role_2">Edit playbook for leaf role</a></li>
+        
+            <li><a class="toctree-l3" href="#edit-variable-file-for-leaf-role_2">Edit variable file for leaf role</a></li>
+        
+            <li><a class="toctree-l3" href="#run-the-playbook-and-verify-configuration-changes_2">Run the playbook and verify configuration changes</a></li>
+        
+        </ul>
+    
+
+    <li class="toctree-l2"><a href="#step-11-run-nxos_fabric-playbook">Step 11: Run nxos_fabric playbook</a></li>
     
 
     </ul>
@@ -196,32 +241,25 @@
 <p>Again we will use roles structure to make the playbook more modular.  The roles included in the new playbook are “<strong>spine</strong>” and “<strong>leaf</strong>”.  </p>
 <ul>
 <li>
-<p>Switch to “Atom”, <strong>right click</strong> on the folder 'LTRDDCN-1572' and create a new playbook named <code>nxos_fabric.yml</code>. Enter this file name and hit enter</p>
+<p>Switch to “Atom”, <strong>right click</strong> on the folder <code>LTRDDCN-1572</code> and create a new playbook named <code>nxos_fabric.yml</code>. Enter this file name and hit enter</p>
 </li>
 <li>
-<p>In the <code>nxos_fabric.yml</code> enter the content as shown in below screenshot:</p>
-<h2 id="_1">```</h2>
-<ul>
-<li>
-<p>hosts: spine
+<p>In the <code>nxos_fabric.yml</code> enter the below content as shown in below screenshot:</p>
+</li>
+</ul>
+<pre><code>---
+
+- hosts: spine
   connection: local
-  roles:</p>
-<ul>
-<li>spine</li>
-</ul>
-</li>
-<li>
-<p>hosts: leaf
+  roles:
+    - spine
+
+- hosts: leaf
   connection: local
-  roles:</p>
-<ul>
-<li>leaf
-```</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
+  roles:
+    - leaf
+</code></pre>
+
 <p><img alt="" src="../pic/4-1-1.png" /></p>
 <ul>
 <li><strong>Click</strong> <code>File</code> and <code>Save</code> . This will save the playbook, and also ftp the playbook to Ansible server using pre-configured “<strong>remote-sync</strong>” package.</li>
@@ -604,12 +642,14 @@ nxos_pim_interface  Manage PIM interface configuration</p>
 <p>Below screenshots shows the output of above command:</p>
 <p><img alt="" src="../pic/4-4-1.png" />
 <img alt="" src="../pic/4-4-2.png" /></p>
-<hr />
-<p><font style=background-color:yellow>Note: login to any leaf (leaf1, leaf3, leaf4) or spine-1 switch to verify multicast configuration and PIM neighbors by executing command:
- <code>show ip pim nei</code></font></p>
-<hr />
 <ul>
-<li>Below screenshot shows the output of above command <code>show ip pim nei</code> from Spine-1</li>
+<li>
+<p><strong>Note:</strong> login to any leaf (leaf1, leaf3, leaf4) or spine-1 switch to verify multicast configuration and PIM neighbors by executing command: </p>
+<p><code>show ip pim nei</code></p>
+</li>
+<li>
+<p>Below screenshot shows the output of above command <code>show ip pim nei</code> from Spine-1</p>
+</li>
 </ul>
 <p><img alt="" src="../pic/4-4-3.png" /></p>
 <hr />
@@ -832,7 +872,8 @@ nxos_pim_interface  Manage PIM interface configuration</p>
 <p><img alt="" src="../pic/4-5-1.png" /></p>
 </li>
 <li>
-<p>After finishing this task: <strong>login</strong> to any leaf switch (on MTPutty) to verify VXLAN configuration and the VNI by issuing the command:  <code>show nve vni</code></p>
+<p>After finishing this task: <strong>login</strong> to any leaf switch (on MTPutty) to verify VXLAN configuration and the VNI by issuing the command:  </p>
+<p><code>show nve vni</code></p>
 <p>Below screenshot shows the output of above command from Leaf-4:</p>
 <p><img alt="" src="../pic/4-5-2.png" /></p>
 </li>
